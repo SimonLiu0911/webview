@@ -103,8 +103,8 @@ extension ViewController : WKScriptMessageHandler {
             }
         }
         
-        if action == "getToken" {
-            webView.evaluateJavaScript("getToken('\(123)')", completionHandler: { (object, error) in
+        if action == "getAppToken" {
+            webView.evaluateJavaScript("setTimeout(function() {getToken('這是一串token')}, 3000)", completionHandler: { (object, error) in
                 
                 print("completed with object, \(object ?? "")")
                 
